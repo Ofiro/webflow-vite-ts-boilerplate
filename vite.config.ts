@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import path from 'path'
 import dotenv from 'dotenv'
+import path from 'path'
+import { defineConfig } from 'vite'
 import eslintPlugin from 'vite-plugin-eslint'
 
 // Load environment variables based on the current mode
@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
         '@assets': path.resolve(__dirname, 'src/assets'),
         '@libs': path.resolve(__dirname, 'src/libs'),
         '@utils': path.resolve(__dirname, 'src/utils'),
-      }
+      },
     },
     server: {
       host: 'localhost',
@@ -48,7 +48,7 @@ export default defineConfig(({ mode }) => {
       },
     },
     define: {
-      'process.env': env
-    }
+      'process.env': env,
+    },
   }
 })

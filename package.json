@@ -6,10 +6,13 @@
   "main": "src/index.ts",
   "scripts": {
     "dev": "vite",
+    "test": "npm run lint:js && npm run lint:css && echo 'Add your test runner command here'",
     "build": "vite build",
     "serve": "vite preview",
     "deploy": "npm run build && echo 'Deploy script here. Choose between Vercel, Netlify, etc.'",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint:js": "eslint . --ext .ts,.tsx",
+    "lint:css": "stylelint '**/*.{css,scss}'"
   },
   "repository": {
     "type": "git",
@@ -45,6 +48,7 @@
     "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
     "husky": "^9.1.1",
     "lint-staged": "^13.0.4",
+    "postcss-scss": "^4.0.9",
     "prettier": "^3.3.3",
     "sas": "^3.0.4",
     "sass": "^1.77.8",
