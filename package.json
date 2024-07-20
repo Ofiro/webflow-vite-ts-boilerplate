@@ -1,0 +1,113 @@
+{
+  "name": "my-webflow-boilerplate",
+  "version": "1.0.6",
+  "description": "A scalable boilerplate for Webflow projects with custom code, GSAP, Swiper, SCSS, Prettier, TypeScript, and more.",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "deploy": "npm run build && echo 'Deploy script here. Choose between Vercel, Netlify, etc.'",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/my-webflow-boilerplate.git"
+  },
+  "keywords": [
+    "webflow",
+    "boilerplate",
+    "vite",
+    "typescript",
+    "scss",
+    "gsap",
+    "swiper",
+    "dayjs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "dayjs": "^1.11.7",
+    "gsap": "^3.12.2",
+    "swiper": "^8.4.4",
+    "vite-plugin-eslint": "^1.8.1"
+  },
+  "devDependencies": {
+    "@commitlint/config-conventional": "^19.0.1",
+    "commitlint": "^19.0.1",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.38.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-sort-imports-es6-autofix": "^0.6.0",
+    "husky": "^9.1.1",
+    "lint-staged": "^13.0.4",
+    "prettier": "^3.3.3",
+    "sas": "^3.0.4",
+    "sass": "^1.77.8",
+    "stylelint": "^15.10.0",
+    "stylelint-config-standard": "^30.0.1",
+    "typescript": "^5.1.6",
+    "vite": "^5.3.4"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.scss": [
+      "stylelint --fix",
+      "prettier --write"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "env": {
+      "browser": true,
+      "es6": true
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "printWidth": 80
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "extends",
+            "tailwind"
+          ]
+        }
+      ],
+      "declaration-block-trailing-semicolon": null,
+      "no-descending-specificity": null
+    }
+  }
+}
