@@ -3,20 +3,19 @@
   "version": "1.0.6",
   "description": "A scalable boilerplate for Webflow projects with custom code, GSAP, Swiper, SCSS, Prettier, TypeScript, and more.",
   "type": "module",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "dev": "vite",
-    "test": "npm run lint:js && npm run lint:css && echo 'Add your test runner command here'",
+    "test": "npm run lint:js && npm run lint:css",
     "build": "vite build",
     "serve": "vite preview",
-    "deploy": "npm run build && echo 'Deploy script here. Choose between Vercel, Netlify, etc.'",
-    "prepare": "husky",
     "lint:js": "eslint . --ext .ts,.tsx",
     "lint:css": "stylelint '**/*.{css,scss}'"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/my-webflow-boilerplate.git"
+    "url": "https://github.com/Ofiro/webflow-vite-ts-boilerplate"
   },
   "keywords": [
     "webflow",
@@ -26,18 +25,24 @@
     "scss",
     "gsap",
     "swiper",
-    "dayjs"
+    "dayjs",
+    "prettier",
+    "eslint",
+    "husky"
   ],
-  "author": "Your Name",
+  "author": "Your Name <your.email@example.com>",
   "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^7.16.1",
     "dayjs": "^1.11.7",
     "gsap": "^3.12.2",
-    "swiper": "^8.4.4",
-    "vite-plugin-eslint": "^1.8.1"
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
     "@commitlint/config-conventional": "^19.0.1",
     "commitlint": "^19.0.1",
     "dotenv": "^16.0.3",
@@ -50,68 +55,14 @@
     "lint-staged": "^13.0.4",
     "postcss-scss": "^4.0.9",
     "prettier": "^3.3.3",
-    "sas": "^3.0.4",
     "sass": "^1.77.8",
     "stylelint": "^15.10.0",
     "stylelint-config-standard": "^30.0.1",
     "typescript": "^5.1.6",
-    "vite": "^5.3.4"
+    "vite": "^5.3.4",
+    "vite-plugin-eslint": "^1.8.1"
   },
-  "lint-staged": {
-    "*.ts": [
-      "eslint --cache --fix",
-      "prettier --write"
-    ],
-    "*.scss": [
-      "stylelint --fix",
-      "prettier --write"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "prettier"
-    ],
-    "plugins": [
-      "@typescript-eslint",
-      "prettier"
-    ],
-    "rules": {
-      "prettier/prettier": "error"
-    },
-    "env": {
-      "browser": true,
-      "es6": true
-    }
-  },
-  "prettier": {
-    "singleQuote": true,
-    "semi": false,
-    "trailingComma": "es5",
-    "tabWidth": 2,
-    "printWidth": 80
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "at-rule-no-unknown": [
-        true,
-        {
-          "ignoreAtRules": [
-            "extends",
-            "tailwind"
-          ]
-        }
-      ],
-      "declaration-block-trailing-semicolon": null,
-      "no-descending-specificity": null
-    }
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
